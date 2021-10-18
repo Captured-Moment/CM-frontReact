@@ -1,0 +1,255 @@
+form input {
+    position: relative;
+    margin: 0 auto;
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    color: #ffffff;
+}
+
+body {font-family: 'Roboto', sans-serif; height: 100%; margin: 0px !important; padding: 0px !important; overflow: hidden;}
+.map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000; text-decoration: none;}
+#map {width:100%; height:44vh; position:relative; overflow:hidden;}
+.clearfix::after{content:""; clear: both; display: block;}
+.float--left{float: left;}
+.float--right{float: right;}
+#placesList li {list-style: none;}
+#placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
+#placesList .item span {display: block;margin-top:4px;}
+#placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+#placesList .item .info{padding:10px 0 10px 55px;}
+#placesList .info .gray {color:#8a8a8a;}
+#placesList .info .jibun {padding-left:26px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
+#placesList .info .tel {color:#009900;}
+#placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
+#placesList .item .marker_1 {background-position: 0 -10px;}
+#placesList .item .marker_2 {background-position: 0 -56px;}
+#placesList .item .marker_3 {background-position: 0 -102px}
+#placesList .item .marker_4 {background-position: 0 -148px;}
+#placesList .item .marker_5 {background-position: 0 -194px;}
+#placesList .item .marker_6 {background-position: 0 -240px;}
+#placesList .item .marker_7 {background-position: 0 -286px;}
+#placesList .item .marker_8 {background-position: 0 -332px;}
+#placesList .item .marker_9 {background-position: 0 -378px;}
+#placesList .item .marker_10 {background-position: 0 -423px;}
+#placesList .item .marker_11 {background-position: 0 -470px;}
+#placesList .item .marker_12 {background-position: 0 -516px;}
+#placesList .item .marker_13 {background-position: 0 -562px;}
+#placesList .item .marker_14 {background-position: 0 -608px;}
+#placesList .item .marker_15 {background-position: 0 -654px;}
+#pagination {margin:10px auto;text-align: center;}
+#pagination a {display:inline-block;margin-right:10px;}
+#pagination .on {font-weight: bold; cursor: default;color:#777;}
+.second {flex-grow: 1; height: 100%;}
+.third {height: 50px;}
+.second .map_wrap {
+  position:relative;
+  width:100%;
+  height:95vh;
+}
+.second #menu_wrap {
+  position:absolute;
+  width:100%;
+  height: 40vh;
+  top: 44vh;
+  padding:5px;
+  overflow-y:auto;
+  background:rgba(255, 255, 255, 1);
+  z-index: 1;
+  font-size:12px;
+  border-radius: 10px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.wrapper .section {
+  width: 100%;
+  height: 52px;
+  overflow: hidden;
+  z-index: 100;
+  position: relative;
+  width: 100%;
+  height: 52px;
+  background: #A96280;
+  border-bottom: #A96280;
+}
+.wrapper  .inner {
+  max-width: 980px;
+  padding: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+.wrapper .first {
+    overflow: hidden;
+    z-index: 100;
+    position: relative;
+    height: 52px;
+    background: #ffffff;
+    width: 100%;
+    border-bottom: 1px solid #A96280;
+}
+.wrapper .option {
+  text-align: center;
+}
+.wrapper .section .back1 {
+  /* position: absolute; */
+  float: left;
+  margin-top: 4px;
+  background: url("../Assets/images/back_white.svg");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 40px;
+  margin-left: 7px;
+  display: block;
+  text-indent: -9999px;
+  border: 0;
+  outline: 0;
+}
+.wrapper .section .search {
+  float: right;
+  background: url("../Assets/images/search-btn.svg");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 40px;
+  margin-right: 7px;
+  display: block;
+  text-indent: -9999px;
+  border: 0;
+  outline: 0;
+}
+.wrapper .searchInput {
+  height: auto; /* 높이 초기화 */
+  line-height: normal; /* line-height 초기화 */
+  width: 260px;
+  height: 26px;
+  border-radius: 10px;
+  border: 1px solid #A96280;
+}
+.section .navBar {
+  overflow: hidden;
+  z-index: 100;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.section .inner .logo {
+  background: url("../Assets/images/logo.svg");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0px auto;
+  text-indent: -9999px;
+}
+.section .inner .login {
+  text-decoration: none;
+  position:absolute;
+  right: 15px;
+  top:17px;
+  display: flex;
+  float: right;
+  font-size: 15px;
+  margin-right: 15px;
+  color : #ffffff;
+}
+.section .inner .login:hover{
+  color : #c4c4c4;
+}
+
+.section2 {
+    max-width: 380px;
+    margin: auto;
+}
+.section2 .bodyDiv {
+    display: flex;
+    /* top: 52px; */
+    height: 84vh;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+.section2 .bodyDiv .mainDiv {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.section2 .bodyDiv .mainDiv .label1 {
+    display: inline-block;
+    font-size: small;
+    padding: 3px;
+    width: 27%;
+    margin-top: 3px;
+    height: 15px;
+}
+.section2 .bodyDiv .mainDiv .input1 {
+    margin: 4px 0 4px 0;
+    width: 70%;
+    color: black;
+}
+.section2 .bodyDiv .mainDiv .buttonP{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.section2 .bodyDiv .mainDiv .buttonP button {
+    position: relative;
+    border:none;
+    box-shadow:none;
+    display: block;
+    width: 100%;
+    height: 35px;
+    margin-top:10px;
+    bottom: 0;
+    color: white;
+    background: #A96280;
+    border-radius: 10px;
+}
+.section2 .bodyDiv .mainDiv .filebox input[type="file"] { 
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip:rect(0,0,0,0); 
+    border: 0; 
+}
+.section2 .bodyDiv .mainDiv .filebox .label2 { 
+    display: inline-block; 
+    width: 16%;
+    height: 35px; 
+    text-align: center;
+    margin-top: 8px;
+    margin-left: 1%;
+    padding-top: 8px;
+    color: #999; 
+    font-size: 13px; 
+    line-height: normal; 
+    vertical-align: middle; 
+    background-color: #fdfdfd; 
+    cursor: pointer; 
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 10px; 
+}
+ /* named upload */ 
+.section2 .bodyDiv .mainDiv .filebox .upload-name { 
+    display: inline-block;
+    width: 53%;
+    height: 35px;
+    margin-top: 8px;
+    padding: .4em .55em; /* label의 패딩값과 일치 */ 
+    font-size: inherit; 
+    line-height: normal; 
+    vertical-align: middle; 
+    border: 1px solid rgba(0,0,0,0.3);
+    color: #999; 
+    border-radius: 10px; 
+    /* -webkit-appearance: none; 네이티브 외형 감추기 
+    -moz-appearance: none; 
+    appearance: none;  */
+}
