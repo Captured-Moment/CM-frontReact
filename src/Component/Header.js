@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
 
@@ -48,7 +49,7 @@ function Header() {
                 </div> */}
 
                 <div>
-                    <a href="/"><img style={logo} src={require('../Assets/images/logo.svg').default} alt="" /></a>
+                    <Link to={'/'}><img style={logo} src={require('../Assets/images/logo.svg').default} alt="" /></Link>
                 </div>
 
             </div>

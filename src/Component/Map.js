@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 /*global kakao*/
 const Map=()=>{
     useEffect(()=>{
+      
         var container = document.getElementById('map');
         var options = {
           center: new kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
@@ -20,7 +21,7 @@ const Map=()=>{
                   lon = position.coords.longitude; // 경도
                 
                 var locPosition = new kakao.maps.LatLng(lat, lon) // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-                  // message = '<div style="text-align:center;padding:5px;color: red">현재위치</div>'; // 인포윈도우에 표시될 내용입니다
+                  message = '<div style="text-align:center;padding:5px;color: red">현재위치</div>'; // 인포윈도우에 표시될 내용입니다
                 
                 // 마커와 인포윈도우를 표시합니다
                 displayMarker(locPosition);
@@ -54,17 +55,17 @@ const Map=()=>{
             }); 
 
 
-            // var iwContent = message, // 인포윈도우에 표시할 내용
-            //   iwRemoveable = true;
+            var iwContent = message, // 인포윈도우에 표시할 내용
+              iwRemoveable = true;
         
-            // // 인포윈도우를 생성합니다
-            // var infowindow = new kakao.maps.InfoWindow({
-            //   content : iwContent,
-            //   removable : iwRemoveable
-            // });
+            // 인포윈도우를 생성합니다
+            var infowindow = new kakao.maps.InfoWindow({
+              content : iwContent,
+              removable : iwRemoveable
+            });
 
-            // // 인포윈도우를 마커위에 표시합니다 
-            // infowindow.open(map, marker);
+            // 인포윈도우를 마커위에 표시합니다 
+            infowindow.open(map, marker);
 
             // 지도 중심좌표를 접속위치로 변경합니다
             map.setCenter(locPosition);      

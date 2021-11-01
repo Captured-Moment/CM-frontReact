@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 function Footer() {
@@ -41,10 +42,10 @@ function Footer() {
     <div style={footer}>
         <div className="inner">
             <ul style={ulList}>
-                <li style={ulLi}><a href="/"><img src={require('../Assets/images/main.svg').default} alt="" /></a></li>
-                <li style={ulLi}><a href="/timeline"><img src={require('../Assets/images/friends.svg').default} alt="" /></a></li>
-                <li style={ulLi}><a href="/mypage"><div style={mypageBtn}></div></a></li>
-                <li style={ulLi}><a href="#"><img src={require('../Assets/images/toggle-btn.svg').default} alt="" /></a></li>
+                <li style={ulLi}><Link to={'/'}><img src={require('../Assets/images/main.svg').default} alt="" /></Link></li>
+                <li style={ulLi}><Link to={'/timeline'}><img src={require('../Assets/images/friends.svg').default} alt="" /></Link></li>
+                <li style={ulLi}><Link to={'/mypage'}><div style={mypageBtn}></div></Link></li>
+                <li style={ulLi}><Link to={'#'}><img src={require('../Assets/images/toggle-btn.svg').default} alt="" /></Link></li>
             </ul>
         </div>
     </div>

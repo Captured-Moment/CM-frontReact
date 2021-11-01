@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import Header from '../Component/Header';
-import Footer from '../Component/Footer';
+import React from 'react';
 import "../Assets/style2.css";
 
 function MyPost() {
@@ -11,14 +9,14 @@ function MyPost() {
                 {/* <!-- DB 에서 1 게시글 위치정보 2 게시글 날짜, 3 사진 4 해시태그 가져오기 --> */}
                 <div class="item-wrap">
                     <div class="wrap user-post-grid">
-                        <span><img src="../images/marker.svg"/></span>
+                        <span><img alt="" src="../images/marker.svg"/></span>
                         <span class="address-font">서울특별시 용산구 청파동</span>
                         <div id="gear-btn" onclick="location.href='/mypost-change'"></div>
                         <div class="gap"></div>
                         <div id="post-date">2021년 9월 29일</div>
                     </div>
                     <div class="wrap timeline-photo big">
-                        <a href="myIndivPost.ejs"><img class="img-thumbnail"
+                        <a href="myIndivPost.ejs"><img class="img-thumbnail" alt=""
                             src="https://user-images.githubusercontent.com/68391767/135757297-741d2ecf-c99d-4767-9e59-796e45da4b0c.png"/></a>
                     </div>
                     <ul class="wrap my post-tag">

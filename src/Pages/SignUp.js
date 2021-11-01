@@ -1,63 +1,95 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from '../Component/Header';
 import Footer from '../Component/Footer';
 import "../Assets/style.css";
+import axios from 'axios';
 
-function SignUp() {
-    return (
-        <div>
-            <Header />
-            <div className="section2">
-                <div className="bodyDiv">
-	    	        <div className="mainDiv">
-	    	        	<form id="joinForm" action="./member/join_member.do" method="post" enctype="multipart/form-data">
-	    	        		<p>
-	    	        			<label className="label1">Nickname</label> 
-	    	        			<input className="input1" type="text" name="nickname" required /> 
-	    	        		</p>
-	    	        		<p>
-	    	        			<label className="label1">name</label> 
-	    	        			<input className="input1" type="text" name="name" required /> 
-	    	        		</p>
-	    	        		<p>
-	    	        			<label className="label1">ID(Email)</label> 
-	    	        			<input  className="input1" type="email" id="id" name="id" required /> 
-	    	        			<span id="id_check" className="w3-text-red"></span>
-	    	        		</p>
-	    	        		<p>
-	    	        			<label className="label1">비밀번호</label> 
-	    	        			<input className="input1" id="pw" name="pw" type="password" required />
-	    	        		</p>
-	    	        		<p>
-	    	        			<label className="label1">비밀번호 확인</label> 
-	    	        			<input className="input1" id="pw2" type="password" required />
-	    	        		</p>
-	    	        		<p className="filebox">
-                                <label className="label1">Profile</label>
-	    	        			<input className="upload-name" value="파일선택" disabled="disabled" />
-	    	        			<label className="label2" for="ex_filename">업로드</label>
-	    	        			<input type="file" id="ex_filename" className="upload-hidden" />
-	    	        		</p>
+export default class SignUp extends Component {
 
-	    	        		<p>
-	    	        			<label className="label1">Comment</label> 
-	    	        			<input className="input1" type="text" />
-	    	        		</p>
+	handleSubmit = e => {
+        e.preventDefault();
+        const data = {
+            nickname : this.nickname,
+            name: this.name,
+            email: this.email,
+            pw: this.password,
+            comment: this.comment,
+			profile: this.profileImage
+        }
+        
+        axios.post('register', data).then(
+            res => {
+                console.log(res);
+            }
+        ).catch (
+            err =>{
+                console.log(err);
+            }
+        )
+    };
 
-	    	        		<p className="buttonP">
-	    	        			<button type="submit" id="joinBtn">가입하기</button>
-	    	        			<button type="button" onclick="history.go(-1);">Cancel</button>
-	    	        		</p>
-	    	        	</form>
-	    	        </div>
-                </div>
-            </div>
-            <Footer />
-        </div>
-    )
+
+	render() {
+
+		return (
+			<div>
+				<Header />
+				<div className="section2">
+					<div className="bodyDiv">
+						<div className="mainDiv">
+							<form id="joinForm" action="./member/join_member.do" method="post" enctype="multipart/form-data">
+								<p>
+									<label className="label1">Nickname</label> 
+									<input className="input1" type="text" name="nickname"
+									onChange={e => this.nickname = e.target.value} required /> 
+								</p>
+								<p>
+									<label className="label1">name</label> 
+									<input className="input1" type="text" name="name"
+									onChange={e => this.name = e.target.value} required /> 
+								</p>
+								<p>
+									<label className="label1">ID(Email)</label> 
+									<input  className="input1" type="email" id="id" name="id" 
+									onChange={e => this.email = e.target.value} required /> 
+									<span id="id_check" className="w3-text-red"></span>
+								</p>
+								<p>
+									<label className="label1">비밀번호</label> 
+									<input className="input1" id="pw" name="pw" type="password"
+									 onChange={e => this.password = e.target.value} required />
+								</p>
+								<p>
+									<label className="label1">비밀번호 확인</label> 
+									<input className="input1" id="pw2" type="password"
+									onChange={e => this.confirmPassword = e.target.value} required />
+								</p>
+								<p className="filebox">
+									<label className="label1">Profile</label>
+									<input className="upload-name" value="파일선택"
+									onChange={e => this.profileImage = e.target.value}  disabled="disabled" />
+									<label className="label2" for="ex_filename">업로드</label>
+									<input type="file" id="ex_filename" className="upload-hidden" />
+								</p>
+	
+								<p>
+									<label className="label1">Comment</label> 
+									<input className="input1" type="text" onChange={e => this.comment = e.target.value} />
+								</p>
+	
+								<p className="buttonP">
+									<button type="submit" id="joinBtn">Sign Up</button>
+									<button type="button" onclick="history.go(-1);">Cancel</button>
+								</p>
+							</form>
+						</div>
+					</div>
+				</div>
+				<Footer />
+			</div>
+		)
+	}
 }
-
-export default SignUp;
 
 {/* <script>
     	$(function(){
