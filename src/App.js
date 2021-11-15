@@ -17,17 +17,17 @@ export default class App extends Component {
 
   state = {};
   componentDidMount = () =>{
-        
     axios.get('user').then(
         res => {
-            this.setState({
-                user: res.data
-            });
+          this.setState({
+            user: res.data
+          });
         },
         err => {
-            console.log(err);
+          console.log(err);
         }
     )
+
   }
   render(){
     return (
@@ -44,8 +44,6 @@ export default class App extends Component {
             <Route path="/timeline" component={Timeline} />
             <Route path="/newpost" component={NewPost} />
           </Switch>
-          
-
           <Footer />
         </div>
       </BrowserRouter>
